@@ -8,20 +8,20 @@ max-len: ["error", 80]
 
 module.exports = overlap
 
-function overlap (range, range2check) {
+function overlap (tmp, tmp2check) {
 
-  return is2dArray(range2check)
-    ? multipleOverlaps(range, range2check)
-    : testOverlap(range[0], range[1], range2check[0], range2check[1])
+  return is2dArray(tmp2check)
+    ? multipleOverlaps(tmp, tmp2check)
+    : testOverlap(tmp[0], tmp[1], tmp2check[0], tmp2check[1])
 }
 
-function multipleOverlaps (range, ranges) {
+function multipleOverlaps (tmp, tmps) {
   let res = {}
 
-  for (let i = 0; i < ranges.length; i++) {
-    let overlaps = testOverlap(range[0], range[1], ranges[i][0], ranges[i][1])
+  for (let i = 0; i < tmps.length; i++) {
+    let overlaps = testOverlap(tmp[0], tmp[1], tmps[i][0], tmps[i][1])
 
-    res[ranges[i].join(',')] = overlaps
+    res[tmps[i].join(',')] = overlaps
   }
 
   return res

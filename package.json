@@ -1,7 +1,7 @@
 {
   "name": "timespan-overlap",
-  "version": "0.0.0",
-  "description": "check if two given timespans overlaps",
+  "version": "1.0.0",
+  "description": "check if two given time spans overlaps",
   "main": "index.js",
   "files": [
     "LICENSE",
